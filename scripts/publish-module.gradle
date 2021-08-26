@@ -31,6 +31,9 @@ afterEvaluate {
                 groupId project.property("libGroup")
                 artifactId project.property("libArtifact")
                 version project.property("libVersion")
+
+                project.properties.put("shouldSign", true)
+
                 if (project.plugins.findPlugin("com.android.library")) {
                     from components.release
                 } else {
